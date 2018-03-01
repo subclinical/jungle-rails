@@ -26,10 +26,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-4">
-      </div>
-      <!-- form for review submission -->
-      <div class="col-sm-8">
+      <div class="col-sm-5">
         <% if current_user %>
         <%= form_for [@product, @review] do |f| %>
 
@@ -47,6 +44,9 @@
 
         <% end %>
         <% end %>
+      </div>
+      <!-- form for review submission -->
+      <div class="col-sm-6">
         <!-- if there are reviews for this product, render them -->
         <% if @reviews.length > 0 %>
           <h2 style="margin-left: 80px">Reviews</h2>
