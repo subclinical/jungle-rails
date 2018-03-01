@@ -1,0 +1,27 @@
+<dl class="dl-horizontal">
+  <!-- render each review -->
+  <dt>Rating</dt>
+  <dd>
+    <% review.rating.times do  %>
+      <span class="glyphicon glyphicon-star"></span>
+    <% end %>
+    <% (5-review.rating).times do  %>
+      <span class="glyphicon glyphicon-star-empty"></span>
+    <% end %>
+    <br>
+    <%= review.rating %> / 5
+  </dd>
+  <dt>User</dt>
+  <dd><%= User.find(review.user_id).name %></dd>
+  <dt>Description</dt>
+  <dd><%= review.description %></dd>
+  <dt>Date</dt>
+  <dd><%= review.created_at %></dd>
+  <!-- show delete button if current user is the creator of the review -->
+  <% if review.user_id == current_user.id %>
+    <%= link_to fa_icon('trash'), review_path(review), 
+    class: 'btn btn-sm btn-danger',
+    method: :delete, 
+    data: { confirm: "Are you sure?" } %>
+  <% end %>
+</dl>

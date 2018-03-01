@@ -25,6 +25,38 @@
         </dl>
       </div>
     </div>
+    <div class="row">
+      <div class="col-sm-4">
+      </div>
+      <!-- form for review submission -->
+      <div class="col-sm-8">
+        <% if current_user %>
+        <%= form_for [@product, @review] do |f| %>
+
+        <div class="form-group">
+        <%= f.label :rating %><br>
+        <%= f.select(:rating, [['1 / 5', 1], ['2 / 5', 2], ['3 / 5', 3], ['4 / 5', 4], ['5 / 5', 5]]) %>
+        </div>
+
+        <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: 'form-control' %>
+        </div>
+
+        <%= f.submit 'Submit Review', class: 'btn btn-primary' %>
+
+        <% end %>
+        <% end %>
+        <!-- if there are reviews for this product, render them -->
+        <% if @reviews.length > 0 %>
+          <h2 style="margin-left: 80px">Reviews</h2>
+
+          <% @reviews.reverse.each do |review| %>
+            <%= render 'review', review: review %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
 
   </article>
 

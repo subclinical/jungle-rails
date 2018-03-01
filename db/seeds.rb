@@ -132,5 +132,50 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+User.create!({
+  name: 'West',
+  email: 'macmac@mac.gmail.com',
+  password_digest: 'weoweoweoweoweoweo'
+})
+
+prod1 = Product.find(2)
+prod2 = Product.find(3)
+prod3 = Product.find(4)
+
+prod1.reviews.create!({
+  rating: 5,
+  description: 'Wow such grace much spend',
+  user_id: 1
+})
+
+prod1.reviews.create!({
+  rating: 1,
+  description: 'I may be bipolar.',
+  user_id: 1
+})
+
+prod1.reviews.create!({
+  rating: 4,
+  description: 'HOLY',
+  user_id: 1
+})
+
+prod2.reviews.create!({
+  rating: 3,
+  description: 'Meh.',
+  user_id: 1
+})
+
+prod3.reviews.create!({
+  rating: 1,
+  description: 'Worst. Mexican. Standoff. Ever.',
+  user_id: 1
+})
+
+prod3.reviews.create!({
+  rating: 4,
+  description: 'Pretty goot',
+  user_id: 1
+})
 
 puts "DONE!"
