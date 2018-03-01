@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
       @products << Product.find_by(id: item.product_id)
       puts @products
     end
-    UserMailer.order_confirmation(current_user, @order.id, @line_items).deliver
+    UserMailer.order_confirmation(current_user, @order.id, @line_items).deliver_now
   end
 
   def create
