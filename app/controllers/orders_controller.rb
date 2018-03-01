@@ -3,8 +3,12 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @line_items = LineItem.where(order_id: @order.id)
-    puts @line_items
-  
+    @products = []
+    @line_items.each do |item|
+      @products << Product.find_by(id: item.product_id)
+      puts @products
+    end
+    UserMailer.order_confirmation(current_user, @order.id, @line_items).deliver
   end
 
   def create
