@@ -27,3 +27,26 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screenshots
 
+Home page
+!['Initial homepage'](https://github.com/subclinical/jungle-rails/blob/master/docs/Homepage.png?raw=true)
+
+User registration
+!['User registration'](https://github.com/subclinical/jungle-rails/blob/master/docs/Registration.png?raw=true)
+
+Product details and user reviews/ratings
+!['Product details and user reviews/ratings'](https://github.com/subclinical/jungle-rails/blob/master/docs/Product.png?raw=true)
+
+Display products by category
+!['Display products by category'](https://github.com/subclinical/jungle-rails/blob/master/docs/Display_by_category.png?raw=true)
+
+Edit product selection as Admin
+!['Edit products'](https://github.com/subclinical/jungle-rails/blob/master/docs/Admin_products.png?raw=true)
+
+Introduce new products as Admin
+!['New products'](https://github.com/subclinical/jungle-rails/blob/master/docs/New_product.png?raw=true)
+
+View shopping cart
+!['Shopping cart'](https://github.com/subclinical/jungle-rails/blob/master/docs/Cart.png?raw=true)
+
+Order summary after checkout
+!['Order summary'](https://github.com/subclinical/jungle-rails/blob/master/docs/Order_received.png?raw=true)
