@@ -21,13 +21,14 @@
   <dd><%= review.created_at %></dd>
 </dl>
   <!-- show delete button if current user is the creator of the review -->
-  <% if review.user_id == current_user.id %>
-    <div class='delete-button'>
-    <%= link_to fa_icon('trash'), review_path(review), 
-    class: 'btn btn-sm btn-danger',
-    method: :delete, 
-    data: { confirm: "Are you sure?" } %>
-    </div>
+  <% if current_user %>
+    <% if review.user_id == current_user.id %>
+      <div class='delete-button'>
+      <%= link_to fa_icon('trash'), review_path(review), 
+      class: 'btn btn-sm btn-danger',
+      method: :delete, 
+      data: { confirm: "Are you sure?" } %>
+      </div>
+    <% end %>
   <% end %>
-
 </div>
